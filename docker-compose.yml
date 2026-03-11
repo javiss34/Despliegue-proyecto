@@ -4,7 +4,7 @@ services:
   frontend:
     build: ./SCE-FrontEnd-Definitiu
     ports:
-      - "4000:4000"
+      - "80:4000"
     volumes:
       - ./SCE-FrontEnd-Definitiu:/app
       - /app/node_modules
@@ -15,7 +15,7 @@ services:
   backend:
     build: ./SCE-BackEnd
     ports:
-      - "3000:3000"
+      - "8080:3000"
     volumes:
       - ./SCE-BackEnd:/usr/src/app
       - /usr/src/app/node_modules
@@ -31,7 +31,7 @@ services:
   postgres:
     image: postgres
     ports:
-      - "5432:5432"
+      - "5432:5432" 
     volumes:
       - postgres_data:/var/lib/postgresql/data
     environment:
